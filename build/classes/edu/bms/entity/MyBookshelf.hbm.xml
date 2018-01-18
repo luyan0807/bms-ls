@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2017-11-10 21:05:54 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="edu.bms.entity.MyBookshelf" table="MYBOOKSHELF">
+        <id name="id" type="java.lang.Integer">
+            <column name="ID" />
+            <generator class="native" />
+        </id>
+        <many-to-one name="reader" class="edu.bms.entity.Reader" fetch="join">
+            <column name="READER" />
+        </many-to-one>
+        <many-to-one name="bookInfo" class="edu.bms.entity.BookInfo" fetch="join">
+            <column name="BOOKINFO" />
+        </many-to-one>
+        <property name="state" type="java.lang.Integer">
+            <column name="STATE" />
+        </property>
+        <property name="timeDate" type="java.util.Date">
+            <column name="TIMEDATE" />
+        </property>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2017-11-10 21:05:54 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="edu.bms.entity.Standard" table="STANDARD">
+        <id name="id" type="java.lang.Integer">
+            <column name="ID" />
+            <generator class="native" />
+        </id>
+        <property name="lendNum" type="int">
+            <column name="LENDNUM" />
+        </property>
+        <property name="lendLimit" type="int">
+            <column name="LENDLIMIT" />
+        </property>
+        <property name="fine" type="double">
+            <column name="FINE" />
+        </property>
+    </class>
+</hibernate-mapping>

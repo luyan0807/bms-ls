@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2017-11-10 21:05:54 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="edu.bms.entity.Review" table="REVIEW">
+        <id name="id" type="java.lang.Integer">
+            <column name="ID" />
+            <generator class="native" />
+        </id>
+        <property name="title" type="java.lang.String">
+            <column name="TITLE" />
+        </property>
+        <property name="content" type="java.lang.String">
+            <column name="CONTENT" />
+        </property>
+        <property name="browseNum" type="int">
+            <column name="BROWSENUM" />
+        </property>
+        <property name="reviewDate" type="java.util.Date">
+            <column name="REVIEWDATE" />
+        </property>
+        <many-to-one name="bookInfo" class="edu.bms.entity.BookInfo" fetch="join">
+            <column name="BOOKINFO" />
+        </many-to-one>
+        <many-to-one name="reader" class="edu.bms.entity.Reader" fetch="join">
+            <column name="READER" />
+        </many-to-one>
+    </class>
+</hibernate-mapping>

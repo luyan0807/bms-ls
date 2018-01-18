@@ -1,0 +1,48 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2017-11-12 15:07:41 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="edu.bms.entity.Handle" table="HANDLE">
+        <id name="id" type="java.lang.String">
+            <column name="ID" />
+            <generator class="native" />
+        </id>
+        <property name="idno" type="java.lang.String">
+            <column name="IDNO" />
+        </property>
+        <property name="level" type="java.lang.String">
+            <column name="LEVEL" />
+        </property>
+        <property name="isbn" type="java.lang.String">
+            <column name="ISBN" />
+        </property>
+        <property name="bname" type="java.lang.String">
+            <column name="BNAME" />
+        </property>
+        <property name="barcode" type="java.lang.String">
+            <column name="BARCODE" />
+        </property>
+        <property name="borrowDate" type="java.util.Date">
+            <column name="BORROWDATE" />
+        </property>
+        <property name="returnDate" type="java.util.Date">
+            <column name="RETURNDATE" />
+        </property>
+        <property name="day" type="int">
+            <column name="DAY" />
+        </property>
+        <property name="shmoney" type="java.lang.Double">
+            <column name="SHMONEY" />
+        </property>
+        <property name="almoney" type="java.lang.Double">
+            <column name="ALMONEY" />
+        </property>
+        <property name="hname" type="java.lang.String">
+            <column name="HNAME" />
+        </property>
+        <property name="status" type="java.lang.String">
+            <column name="STATUS" />
+        </property>
+    </class>
+</hibernate-mapping>

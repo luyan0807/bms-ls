@@ -1,0 +1,17 @@
+#Layer1 {
+	position:absolute;
+	width:642px;
+	height:542px;
+	z-index:1;
+	left: 528px;
+	top: 108px;
+}
+.a_class_1{
+text-decoration:none;
+color:#006000;
+}
+.tr_class_1{
+border-bottom-width:thin;
+border-bottom-style:dotted;
+background-color:#E3E3E3;
+}

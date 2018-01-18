@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-4.0.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.0.xsd
+		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-4.0.xsd">
+        <bean id="adminDao" class="edu.bms.dao.AdminDao">       
+        <property name="sessionFactory" ref="sessionFactory"></property>
+        </bean>
+        <bean id="adminService" class="edu.bms.service.AdminService">
+        <property name="adminDao" ref="adminDao"></property>
+        </bean>
+        <bean id="adminAction" class="edu.bms.action.AdminAction">
+        <property name="adminService" ref="adminService"></property>
+        </bean>
+        
+        <bean id="bookCatalogDao" class="edu.bms.dao.BookCatalogDao">
+        <property name="sessionFactory" ref="sessionFactory"></property>
+        </bean>
+        <bean id="bookCatalogService" class="edu.bms.service.BookCatalogService">
+        <property name="bookCatalogDao" ref="bookCatalogDao"></property>
+        </bean>
+        <bean id="bookCatalogAction" class="edu.bms.action.BookCatalogAction">
+        <property name="bookCatalogService" ref="bookCatalogService"></property>
+        </bean>
+        
+        <bean id="bookInfoDao" class="edu.bms.dao.BookInfoDao">
+        <property name="sessionFactory" ref="sessionFactory"></property>
+        </bean>
+        <bean id="bookInfoService" class="edu.bms.service.BookInfoService">
+        <property name="bookInfoDao" ref="bookInfoDao"></property>
+        </bean>
+        <bean id="bookInfoAction" class="edu.bms.action.BookInfoAction">
+        <property name="bookInfoService" ref="bookInfoService"></property>
+        <property name="bookCatalogService" ref="bookCatalogService"></property>
+        </bean>
+        <bean id="bookBarcodeDao" class="edu.bms.dao.BookBarcodeDao">
+        <property name="sessionFactory" ref="sessionFactory"></property>
+        </bean>
+        <bean id="bookBarcodeService" class="edu.bms.service.BookBarcodeService">
+        <property name="bookBarcodeDao" ref="bookBarcodeDao"></property>
+        </bean>
+        <bean id="bookBarcodeAction" class="edu.bms.action.BookBarcodeAction">
+        <property name="bookBarcodeService" ref="bookBarcodeService"></property>
+        </bean>
+        <bean id="searchBookAction" class="edu.bms.action.SearchBookAction">
+        <property name="bookInfoService" ref="bookInfoService"></property>
+        </bean>
+        <bean id="borrowListDao" class="edu.bms.dao.BorrowListDao">
+        <property name="sessionFactory" ref="sessionFactory"></property>
+        </bean>
+        <bean id="borrowListService" class="edu.bms.service.BorrowListService">
+         <property name="borrowListDao" ref="borrowListDao"></property>
+        </bean>
+        <bean id="borrowAction" class="edu.bms.action.BorrowAction">
+        <property name="borrowListService" ref="borrowListService"></property>
+        </bean>
+        <bean id="returnListDao" class="edu.bms.dao.ReturnListDao">
+        <property name="sessionFactory" ref="sessionFactory"></property>
+        </bean>
+        <bean id="returnListService" class="edu.bms.service.ReturnListService">
+        <property name="returnListDao" ref="returnListDao"></property>
+        </bean>
+        <bean id="returnListAction" class="edu.bms.action.ReturnListAction">
+        <property name="returnListService" ref="returnListService"></property>
+        </bean>
+        <bean id="LargessDao" class="edu.bms.dao.LargessDao">
+       <property name="sessionFactory" ref="sessionFactory"></property>
+        </bean>
+        <bean id="LargessService" class="edu.bms.service.LargessService">
+        <property name="LargessDao" ref="LargessDao"></property>
+        </bean>
+        <bean id="LargessAction" class="edu.bms.action.LargessAction">
+        <property name="LargessService" ref="LargessService"></property>
+        </bean>
+        <bean id="wishBookDao" class="edu.bms.dao.WishBookDao" >
+        <property name="sessionFactory" ref="sessionFactory"></property> 
+        </bean>
+        <bean id="wishBookService" class="edu.bms.service.WishBookService" >
+        <property name="wishBookDao" ref="wishBookDao"></property>
+        </bean>
+        <bean id="WishBookAction" class="edu.bms.action.WishBookAction" >
+        <property name="wishBookService" ref="wishBookService"></property>
+        </bean>
+        
+         <bean id="bookInfoListDao" class="edu.bms.dao.BookInfoListDao">       
+        <property name="sessionFactory" ref="sessionFactory"></property>
+        </bean>
+        <bean id="bookInfoListService" class="edu.bms.service.BookInfoListService">
+        <property name="bookInfoListDao" ref="bookInfoListDao"></property>
+        </bean>
+        <bean id="bookInfoListAction" class="edu.bms.action.BookInfoListAction">
+        <property name="bookInfoListService" ref="bookInfoListService"></property>
+        </bean>
+        
+        
+        <bean id="bookListDao" class="edu.bms.dao.BookListDao">       
+        <property name="sessionFactory" ref="sessionFactory"></property>
+        </bean>
+        <bean id="bookListService" class="edu.bms.service.BookListService">
+        <property name="bookListDao" ref="bookListDao"></property>
+        </bean>
+        <bean id="bookListAction" class="edu.bms.action.BookListAction">
+        <property name="bookListService" ref="bookListService"></property>
+        <property name="bookInfoListService" ref="bookInfoListService"></property>
+        </bean>
+       
+       
+<!-- 额度标准 -->
+      <bean id="standardDao" class="edu.bms.dao.StandardDao">
+         <property name="sessionFactory" ref="sessionFactory"></property>
+      </bean>
+      
+      <bean id="standardService" class="edu.bms.service.StandardService">
+         <property name="standardDao" ref="standardDao"></property>
+      </bean>
+      
+      <bean id="standardAction" class="edu.bms.action.S_StandardAction">
+         <property name="standardService" ref="standardService"></property>
+      </bean>
+       
+<!-- 三只公告 -->
+      <bean id="messageDao" class="edu.bms.dao.MessageDao">
+      	<property name="sessionFactory" ref="sessionFactory"></property>
+      </bean>
+      
+      <bean id="messageService" class="edu.bms.service.MessageService">
+        <property name="messageDao" ref="messageDao"></property>
+      </bean>
+      
+      <bean id="messageAction" class="edu.bms.action.S_MessageAction">
+       <property name="messageService" ref="messageService"></property>
+      </bean>
+        
+<!-- 活动预告 -->
+      <bean id="noticeDao" class="edu.bms.dao.NoticeDao">
+         <property name="sessionFactory" ref="sessionFactory"></property>
+      </bean>
+      
+      <bean id="noticeService" class="edu.bms.service.NoticeService">
+         <property name="noticeDao" ref="noticeDao"></property>
+      </bean>
+      
+      <bean id="noticeAction" class="edu.bms.action.S_NoticeAction">
+         <property name="noticeService" ref="noticeService"></property>
+      </bean>
+        
+<!-- 缴费处理 -->
+      <bean id="handleDao" class="edu.bms.dao.HandleDao">
+        <property name="sessionFactory" ref="sessionFactory"></property>
+      </bean>
+      
+      <bean id="handleService" class="edu.bms.service.HandleService">
+         <property name="handleDao" ref="handleDao"></property>
+      </bean>
+      
+      <bean id="handleAction" class="edu.bms.action.S_HandleAction">
+         <property name="handleService" ref="handleService"></property>
+      </bean>
+<!-- 用户管理 -->      
+        <bean id="userManageDao" class="edu.bms.dao.S_UserManageDao">
+        <property name="sessionFactory" ref="sessionFactory"></property>
+        </bean>
+        <bean id="userManageService" class="edu.bms.service.S_UserManageService">
+        <property name="userManageDao" ref="userManageDao"></property>
+          <property name="bookListDao" ref="bookListDao"></property>
+        </bean>
+        <bean id="userManageAction" class="edu.bms.action.S_UserManageAction">
+        <property name="userManageService" ref="userManageService"></property>
+         <property name="bookListService" ref="bookListService"></property>
+        </bean>
+        <!-- 借阅排行 -->
+        <bean id="borrowSortAction" class="edu.bms.action.BorrowSortAction">
+        <property name="bookCatalogService" ref="bookCatalogService"></property>
+        </bean>
+        
+</beans>

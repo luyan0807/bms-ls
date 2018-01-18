@@ -1,0 +1,40 @@
+#Layer1 {
+	position:absolute;
+	width:46px;
+	height:21px;
+	z-index:1;
+	top: 89px;
+	left: 510px;
+	font-size:16px;
+	color:#000000;
+}
+#Layer2 {
+	position:absolute;
+	width:46px;
+	height:21px;
+	z-index:2;
+	left: 510px;
+	top: 136px;
+	font-size:16px;
+	color:#000000;
+}
+#Layer3 {
+	position:absolute;
+	width:46px;
+	height:21px;
+	z-index:3;
+	left: 510px;
+	top: 186px;
+		font-size:16px;
+	color:#000000;
+}
+#Layer4 {
+	position:absolute;
+	width:46px;
+	height:21px;
+	z-index:4;
+	left: 510px;
+	top: 233px;
+	font-size:16px;
+	color:#000000;
+}

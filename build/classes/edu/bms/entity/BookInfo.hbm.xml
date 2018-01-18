@@ -1,0 +1,72 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2017-11-12 15:07:41 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="edu.bms.entity.BookInfo" table="BOOKINFO" lazy="true">
+        <id name="id" type="java.lang.Integer">
+            <column name="ID" />
+            <generator class="native" />
+        </id>
+        <property name="name" type="java.lang.String">
+            <column name="NAME" />
+        </property>
+        <property name="isbn" type="java.lang.String">
+            <column name="ISBN" />
+        </property>
+        <property name="image" type="java.lang.String">
+            <column name="IMAGE" />
+        </property>
+        <property name="price" type="double">
+            <column name="PRICE" />
+        </property>
+        <property name="anthor" type="java.lang.String">
+            <column name="ANTHOR" />
+        </property>
+        <property name="publishName" type="java.lang.String">
+            <column name="PUBLISHNAME" />
+        </property>
+        <property name="publishDate" type="java.util.Date">
+            <column name="PUBLISHDATE" />
+        </property>
+        <property name="kindOf" type="java.lang.String">
+            <column name="KINDOF" />
+        </property>
+        <property name="callNumber" type="java.lang.String">
+            <column name="CALLNUMBER" />
+        </property>
+        <property name="language" type="java.lang.String">
+            <column name="LANGUAGE" />
+        </property>
+        <property name="num" type="java.lang.Integer">
+            <column name="NUM" />
+        </property>
+        <property name="pageNo" type="java.lang.Integer">
+            <column name="PAGENO" />
+        </property>
+        <property name="collection" type="java.lang.String">
+            <column name="COLLECTION" />
+        </property>
+        <property name="plotSummary" type="java.lang.String">
+            <column name="PLOTSUMMARY" />
+        </property>
+        <property name="edition" type="java.lang.Integer">
+            <column name="EDITION" />
+        </property>
+        <property name="abstracts" type="java.lang.String">
+            <column name="ABSTRACTS" />
+        </property>
+        <many-to-one name="bookCatalog" class="edu.bms.entity.BookCatalog" lazy="no-proxy">
+            <column name="BOOKCATALOG" />
+        </many-to-one>
+        <property name="cataDate" type="java.util.Date">
+            <column name="CATADATE" />
+        </property>
+        <set name="reviews" table="REVIEW" inverse="false" lazy="true">
+            <key>
+                <column name="ID" />
+            </key>
+            <one-to-many class="edu.bms.entity.Review" />
+        </set>
+    </class>
+</hibernate-mapping>
